@@ -1,0 +1,58 @@
+// Script for smooth scrolling
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Script to handle form submission
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const formValues = Object.fromEntries(formData.entries());
+
+        console.log('Form Submitted:', formValues);
+
+        alert('Thank you for your message! We will get back to you soon.');
+
+        this.reset();
+    });
+}
+
+// Dynamic services animation (optional)
+const services = document.querySelectorAll('#services .service');
+if (services.length) {
+    window.addEventListener('scroll', function () {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        services.forEach(service => {
+            const serviceTop = service.getBoundingClientRect().top;
+            if (serviceTop < triggerBottom) {
+                service.classList.add('visible');
+            } else {
+                service.classList.remove('visible');
+            }
+        });
+    });
+}
+
+// Mobile menu toggle (if needed)
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('nav ul');
+if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+}

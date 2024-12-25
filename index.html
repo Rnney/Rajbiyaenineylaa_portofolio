@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rajbiyaeni Neyla Nurunnajmi</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #6c09ee, #ece945);
+            color: #333;
+            line-height: 1.6;
+        }
+        section {
+            padding: 80px 50px;
+            background: #FFF5E1;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #FF6F61;
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Experience Section */
+        #experience {
+            padding: 50px;
+            background: #FFF5E1;
+            animation: fadeIn 2s ease;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .project-item {
+            background: #fff;
+            border: 2px solid #FF6F61;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 111, 97, 0.1);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-item:hover::after {
+            opacity: 0.5;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #FF6F61;
+        }
+
+        .project-item .project-details {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .project-item h3 {
+            font-size: 1.2em;
+            color: #FF6F61;
+            margin-bottom: 5px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .project-item p {
+            margin: 0;
+            font-size: 1em;
+            color: #333;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Hover animation for images */
+        .project-item img {
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.1);
+        }
+
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #FF6F61; /* Warna cerah dan fresh */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FF6F61;
+        }
+
+        /* Hero Section */
+        #home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 40px;
+            background: rgba(255, 255, 255, 0.7);
+            margin-top: 80px;
+        }
+
+        .hero-left {
+            max-width: 50%;
+        }
+
+        .hero-left h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero-left p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hero-right img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 50px;
+            background: #FFF5E1; /* Warna latar belakang lembut */
+            margin: 20px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #FF6F61;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 50px;
+            background: #FFF5E1;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .list-item {
+            background: #FFFBF1; /* Latar belakang lembut */
+            border: 1px solid #FF6F61;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .list-item:hover {
+            transform: translateY(-5px);
+            background-color: #FFD1D1; /* Efek hover yang cerah */
+        }
+
+        .list-item h3 {
+            font-size: 1.2em;
+            color: #FF6F61;
+            margin-bottom: 5px;
+        }
+
+        .list-item p {
+            margin: 0;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .list-item em {
+            color: #666;
+            font-style: italic;
+            display: block;
+            margin: 5px 0;
+        }
+
+        /* Certificates Section */
+#certificates {
+    padding: 80px 20px;
+    background: #FFF5E1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: #FF6F61;
+}
+
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Membuat grid responsif */
+    gap: 30px;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 1200px; /* Membatasi lebar grid */
+}
+
+.certificates-item {
+    background: #fff;
+    border: 2px solid #FF6F61;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificates-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.certificates-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #FF6F61;
+}
+
+.certificates-item p {
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.certificates-item p a {
+    color: #FF6F61;
+    text-decoration: none;
+}
+
+.certificates-item p a:hover {
+    text-decoration: underline;
+}
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #FFF5E1;
+            padding: 50px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.2em;
+            color: #FF6F61;
+            margin-bottom: 20px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #FF6F61;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #333;
+        }
+    </style>
+     </style>
+     <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Rajbiyaeni Neyla Nurunnajmi",
+            "url": "https://rajbiyaenineylaaa-portofolio.netlify.app/", 
+            "image": "images/poto profil.jpg",
+            "description": "Mahasiswa Ilmu Komputer di Universitas Yatsi Madani. Saya percaya bahwa setiap ide besar dimulai dari sebuah keberanian untuk bermimpi.",
+            "email": "mailto:rajbiyaenayl431@gmail.com",
+            "telephone": "+62 858-8267-7990",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jl. Aria Santika No.40A",
+              "addressLocality": "Margasari, Kec. Karawaci",
+              "addressRegion": "Banten",
+              "postalCode": "15114",
+              "addressCountry": "Indonesia"
+            },
+            "alumniOf": {
+              "@type": "EducationalOccupationalCredential",
+              "educationalCredentialAwarded": "Sarjana Ilmu Komputer",
+              "educationalOrganization": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitas Yatsi Madani"
+              }
+            },
+            "memberOf": {
+              "@type": "Organization",
+              "name": "Bootcamp 2023, Webinar 2024"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Freelancer, Projects"
+            },
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Mahasiswa, Developer, Data Scientist"
+            },
+            "education": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "educationalCredentialAwarded": "Sekolah Dasar",
+                "educationalOrganization": {
+                  "@type": "School",
+                  "name": "SDN 3 CIPEUNDEUY"
+                },
+                "startDate": "2011",
+                "endDate": "2017"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "educationalCredentialAwarded": "Sekolah Menengah Pertama",
+                "educationalOrganization": {
+                  "@type": "School",
+                  "name": "SMP IT LA-ROYBA"
+                },
+                "startDate": "2017",
+                "endDate": "2020"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "educationalCredentialAwarded": "Sekolah Menengah Atas",
+                "educationalOrganization": {
+                  "@type": "School",
+                  "name": "MA AL-MANSYURIYAH"
+                },
+                "startDate": "2020",
+                "endDate": "2023"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "educationalCredentialAwarded": "Ilmu Komputer",
+                "educationalOrganization": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Universitas Yatsi Madani"
+                },
+                "startDate": "2023",
+                "endDate": "Lulus"
+              }
+            ],
+            "skills": [
+              "Python",
+              "C++",
+              "HTML",
+              "Canva",
+              "CapCut"
+            ],
+            "projects": [
+              {
+                "@type": "CreativeWork",
+                "name": "Aplikasi Media Interaktif",
+                "description": "Membuat aplikasi edukasi berbasis PowerPoint dengan animasi dinamis dan navigasi cerdas.",
+                "url": "images/project 1.jpg"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Pengelolaan Database dengan SQL",
+                "description": "Menulis dan menjalankan query SQL melalui Command Prompt untuk mengelola basis data secara efisien.",
+                "url": "images/CMD.png"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Data Formatting & Cleansing",
+                "description": "Pembersihan dan pengorganisasian data mentah menjadi format yang lebih terstruktur.",
+                "url": "images/project 3.png"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Data Science",
+                "description": "Mengelola dan mengoptimalkan data dengan fokus pada teknik menduplikat dan menggunakan ID unik.",
+                "url": "images/UML.png"
+              }
+            ],
+            "certificates": [
+              {
+                "@type": "CreativeWork",
+                "name": "Microsoft Excel Data Formatting & Cleansing",
+                "url": "images/data formatting & cleansing.jpg"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Pivot Table",
+                "url": "images/image sertifikat mastering pivot table.jpg"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "UX Writing",
+                "url": "images/images sertifikat UX writing.jpg.jpg"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Data Science",
+                "url": "images/image sertifikat data science introduction.jpg"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Commfest",
+                "url": "images/sertifikat commfest.jpg"
+              }
+            ]
+          }
+          
+     </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Rajbiyaeni Neyla Nurunnajmi</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-left">
+            <h1>Hello, I'm Rajbiyaeni Neyla Nurunnajmi 👋</h1>
+            <p>Mahasiswa Ilmu Komputer di Universitas Yatsi Madani. Saya percaya bahwa setiap ide besar dimulai dari sebuah keberanian untuk bermimpi.</p>
+        </div>
+        <div class="hero-right">
+            <img src="images/poto profil.jpg" alt="Rajbiyaeni Neyla Nurunnajmi">
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="content">
+            <p>Rajbiyaeni Neyla Nurunnajmi adalah mahasiswi jurusan Ilmu Komputer di Universitas Yatsi Madani yang bersemangat mengeksplorasi dunia teknologi. Perjalanan saya menuju dunia teknologi tidak dimulai dari jalur yang biasa. sebelumnya, saya mengambil jurusan IPS di SMA, namun rasa ingin tahu dan semangat untuk terus belajar membawa saya pada dunia pemrograman,dan dunia teknologi. saya percaya bahwa latar belakang bukanlah sebuah batasan, melainkan sebuah fondasi unik yang memberikan perspektif berbeda. sebagai pribadi yang haus akan ilmu, saya memanfaatkan setiap peluang untuk berkembang, baik melalui akademik atau pun non akademik.Bagi saya, kunci kesuksesan adalah keberanian untuk melangkah meski keluar dari zona nyaman. Seperti kata Helen Keller,"Alone we can do so littel;Together we can do so much." bahwa kolaborasi dan kerja keras adalah kekuatan terbesar untuk menghadapi tantangan apa pun. Melalui portofolio ini, saya berharap dapat menunjukkan bahwa keterbatasan bukanlah sebuah hambatan, melainkan motivasi untuk terus maju. Saya terbuka untuk berkolaborasi, berbagi ide dan menciptakan karya yang memberikan dampak positif bagi masyarakat dan dunia teknologi.</p>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="projects-container">
+
+            <div class="project-item">
+                <img src="images/project 1.jpg" alt="Aplikasi media">
+                <div class="project-details">
+                    <h3>Aplikasi Media Interaktif</h3>
+                    <p>Bootcamp 2023</p>
+                  <p class="description">Membuat aplikasi edukasi berbasis PowerPoint dengan animasi dinamis dan navigasi cerdas untuk menciptakan media pembelajaran yang menarik dan efektif.</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="images/CMD.png" alt="Pengelolaan Database dengan SQL">
+                <div class="project-details">
+                    <h3>Pengelolaan Database dengan SQL</h3>
+                    <p>2024</p>
+                    <p class="description">Menulis dan menjalankan query SQL melalui Command Prompt (CMD) untuk mengelola basis data secara prefesional. Tugas ini mencakup pembuatan,pengolahan,hingga optimalisasi data,memastikan pengelolaan database yang efesien dan terorganisir untuk mendukung kebutuhan sistem.</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-details">
+                    <h3>Data Formatting & Cleansing</h3>
+                    <p>2023</p>
+                    <p class="description">Project ini melibatkan pembersihan dan pengorganisasian data mentah menjadi format yang lebih terstruktur, memungkinkan analisis lebih lanjut dan pengembalian keputusan yang lebih baik.</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="images/project 3.png" alt="Proyek Data Science">
+                <div class="project-details">
+                    <h3>Data Science </h3>
+                    <p>Webinar 2024</p>
+                    <p class="description">Mengembangkan keterampilan dalam mengelola dan mengoptimalkan data dengan fokus pada teknik menduplikat dan menggunakan ID unik serta memastikan konsistensi data melalui homogenisasi. proses ini menjadi lebih efisien dan akurat. hal ini memperkuat pemahaman saya tentang pengelolaan data yang esensial dalam mempersiapkan data untuk aplikasi di berbagai bidang,termasuk pengembalian keputusan berbasis data.</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="images/UML.png" alt="Analisis Perancang sistem">
+                <div class="project-details">
+                    <h3>Analisis dan Perancang Sistem</h3>
+                    <p>2024</p>
+                    <p class="description">Menghasilkan diagram UML dan ERD untuk memecahkan alur sistem dan mendukung desain database yang terstruktur dan terintegrasi.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="list-container">
+            <div class="list-item">
+                <h3>Sekolah Dasar</h3>
+                <p><strong>SDN 3 CIPEUNDEUY</strong></p>
+                <p><em>2011 - 2017</em></p>
+            </div>
+            <div class="list-item">
+                <h3>Sekolah Menengah Pertama</h3>
+                <p><strong>SMP IT LA-ROYBA</strong></p>
+                <p><em>2017 - 2020</em></p>
+            </div>
+            <div class="list-item">
+                <h3>Sekolah Menengah Atas</h3>
+                <p><strong>MA AL-MANSYURIYAH</strong></p>
+                <p><em>2020 - 2023</em></p>
+            </div>
+            <div class="list-item">
+                <h3>Gelar Sarjana</h3>
+                <p><strong>Ilmu Komputer</strong></p>
+                <p><strong>Universitas Yatsi Madani</strong></p>
+                <p><em>2023 - Lulus</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="list-container">
+        <div class="list-item">
+            <h3>Perfection</h3>
+            <p>Memiliki komitmen untuk menghasilkan karya terbaik dalam setiap aspek pekkerjaan.</p>
+        </div>
+        <div class="list-item">
+            <h3>Penguasa Pemrograman</h3>
+            <p>Mampu menggunakan Python untuk mengelola data dan pengembangan aplikasi. Menguasai C++ untuk pemrograman berorientasi objek dan pengembangan sistem. Berpengalamm dalam HTML untuk pembuatan struktur web yang responsif dan dinamis.</p>
+        </div>
+        <div class="list-item">
+            <h3>Desain Visual dan Kreativitas Digital</h3>
+            <p>memiliki keterkaian dalam dunia pengeditan foto dan video, dengan pengalaman menggunakan Canva, CapCut, dan berbagai aplikassi desain lainnya.</p>
+        </div>
+        <div class="list-item">
+            <h3>Soft Skills</h3>
+            <p>Mampu beradaptasi dan berpikir kritis.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title">Certificates</h2>
+        <div class="certificates-container">
+            <div class="certificates-item">
+                <img src="images/data formatting & cleansing.jpg" alt="Sertifikat 1">
+                <p><a href="images/data formatting & cleansing.jpg" target="_blank">Microsoft Excel Data Formatting & Cleansing</a></p>
+            </div>
+            <div class="certificates-item">
+                <img src="images/image sertifikat mastering pivot table.jpg" alt="Sertifikat 2">
+                <p><a href="images/image sertifikat mastering pivot table.jpg" target="_blank">Pivot Table</a></p>
+            </div>
+            <div class="certificates-item">
+                <img src="images/images sertifikat UX writing.jpg.jpg" alt="Sertifikat 3">
+                <p><a href="images/images sertifikat UX writing.jpg.jpg" target="_blank">UX writing</a></p>
+            </div>
+            <div class="certificates-item">
+                <img src="images/image sertifikat data science introduction.jpg" alt="Sertifikat 4">
+                <p><a href="images/image sertifikat data science introduction.jpg" target="_blank">Data Science</a></p>
+            </div>
+            <div class="certificates-item">
+                <img src="images/sertifikat commfest.jpg" alt="Sertifikat 5">
+                <p><a href="images/sertifikat commfest.jpg" target="_blank">Commfest</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="content">
+            <p>Email: <a href="mailto:rajbiyaenayl431@gmail.com">rajbiyaenayl431@gmail.com</a></p>
+            <p>Nomer telpon:<a href="https://wa.me/+62 858-8267-7990" target="_blank" rel="noopener noreferref">+62 858-8267-7990</a></p>
+            <p>Alamat:</p>
+            <pre>
+Jl. Aria Santika No.40A,
+RT.005/RW.011,Margasari, Kec. Karawaci,
+Kota Tangerang, Banten 15114
+            </pre>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rajbiyaeni Neyla Nurunnajmi. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
